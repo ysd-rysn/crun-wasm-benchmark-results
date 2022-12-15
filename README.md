@@ -1,0 +1,1 @@
+# crun wasm benchmark result
