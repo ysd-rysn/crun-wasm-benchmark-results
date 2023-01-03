@@ -70,6 +70,9 @@ def generate_single_wasm_result() -> None:
         max_memories = [[] for i in range(quantity)]
         i = 0
         for file_name in file_names:
+            _, ext = os.path.splitext(file_name)
+            if ext != '.time':
+                continue
             file_path = get_time_file_path(dir_name, file_name)
             memory = extract_value_from_file(file_path, ITEM['max_memory'])
             index = i // N_BENCHMARK 
@@ -111,6 +114,9 @@ def generate_multiple_wasm_result() -> None:
         # Extract max memory size from each .time files.
         max_memory = []
         for file_name in file_names:
+            _, ext = os.path.splitext(file_name)
+            if ext != '.time':
+                continue
             file_path = get_time_file_path(dir_name, file_name)
             memory = extract_value_from_file(file_path, ITEM['max_memory'])
             max_memory.append(int(memory))
