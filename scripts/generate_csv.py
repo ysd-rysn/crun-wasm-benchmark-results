@@ -79,10 +79,9 @@ def generate_single_wasm_result() -> None:
 
         # Extract max memory size from each .time files.
         quantity = extract_quantity_from_dir_name(dir_name)
-        max_memories = [[] for i in range(quantity)]
+        max_memories = []
         elapsed_times = []
         startup_times = []
-        i = 0
         for file_name in file_names:
             _, ext = os.path.splitext(file_name)
             if ext != '.time':
@@ -95,25 +94,15 @@ def generate_single_wasm_result() -> None:
             else:
                 file_path = get_time_file_path(dir_name, file_name)
                 tmp_memory = extract_value_from_file(file_path, ITEM['max_memory'])
-                index = i // N_BENCHMARK
-                max_memories[index].append(int(tmp_memory))
-                i += 1
+                max_memories.append(int(tmp_memory))
 
         logging.debug(max_memories)
         logging.debug(f'max_memories length is {len(max_memories)}')
 
-        # Calculate average max memory size.
-        each_avg = []
-        avg = 0
-        for max_memory in max_memories:
-            each_avg.append(statistics.mean(max_memory))
-        for value in each_avg:
-            avg += value
-
         # Add average max memory into dictionary.
         for key in max_memory_avg:
             if key == dir_name.split('/')[-2] + '/' + dir_name.split('/')[-1]:
-                max_memory_avg[key] = avg
+                max_memory_avg[key] = statistics.mean(max_memories) * quantity
 
         # Add average elapsed time into dictionary.
         for key in elapsed_time_avg:
