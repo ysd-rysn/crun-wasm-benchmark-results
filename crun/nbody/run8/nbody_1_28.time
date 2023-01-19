@@ -1,18 +1,18 @@
-	Command being timed: "/home/vagrant/wasm32-wasi-benchmark/bin/crun run nbody-wasm-8"
-	User time (seconds): 4.35
+	Command being timed: "/home/vagrant/wasm32-wasi-benchmark/bin/crun run --console-socket=/home/vagrant/wasm32-wasi-benchmark/nbody_1_28.sock nbody_wasm_1_28"
+	User time (seconds): 4.94
 	System time (seconds): 0.00
-	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.36
+	Percent of CPU this job got: 53%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.24
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 20088
+	Maximum resident set size (kbytes): 19408
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
 	Minor (reclaiming a frame) page faults: 1351
 	Voluntary context switches: 11
-	Involuntary context switches: 48
+	Involuntary context switches: 442
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 0
