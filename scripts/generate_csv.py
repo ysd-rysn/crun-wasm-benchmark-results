@@ -11,10 +11,13 @@ logging.disable(level=logging.DEBUG)  # Comment this line when enabling debug pr
 
 
 NAME = ['nbody', 'fannkuch-redux', 'binary-trees']
-QUANTITY = ['run4', 'run8', 'run12']
+QUANTITY = ['run1', 'run2', 'run3', 'run4', 'run8', 'run12']
 N_BENCHMARK = 50
 ITEM = {
-    'elapsed_time': 'Elapsed (wall clock) time (h:mm:ss or m:ss):',
+    'elapsed_time': 'elapsed time:',
+    'start_time': 'start time:',
+    'end_time': 'end time:',
+    'init_time': 'init time:',
     'max_memory': 'Maximum resident set size (kbytes):'
 }
 
@@ -23,21 +26,23 @@ results = {
     'multiple_wasm': {}
 }
 max_memory_avg = {name + '/' + quantity: 0 for name in NAME for quantity in QUANTITY}
-elapsed_time_avg = {name + '/' + quantity: '0:0' for name in NAME for quantity in QUANTITY}
+elapsed_time_avg = {name + '/' + quantity: '0.0' for name in NAME for quantity in QUANTITY}
+startup_time_avg = {name + '/' + quantity: '0.0' for name in NAME for quantity in QUANTITY}
 
 logging.debug(max_memory_avg)
 logging.debug(elapsed_time_avg)
 
 
 def get_time_file_path(dir_name: str, file_name: str) -> str:
+    tmp_dir_name = dir_name.split('/')[-2] + '/' + dir_name.split('/')[-1]
     for name in NAME:
         for quantity in QUANTITY:
-            if f'{name}/{quantity}' in dir_name:
+            if f'{name}/{quantity}' == tmp_dir_name:
                 file_path = f'{dir_name}/{file_name}'
                 return file_path
 
 
-def extract_value_from_file(file_path: str, item: str) -> int:
+def extract_value_from_file(file_path: str, item: str) -> str:
     with open(file_path) as file:
         for line in file:
             if item in line:
@@ -46,17 +51,57 @@ def extract_value_from_file(file_path: str, item: str) -> int:
                 return value
 
 
+def extract_values_from_file(file_path: str, item: str) -> list:
+    with open(file_path) as file:
+        values = []
+        for line in file:
+            if item in line:
+                values.append(line[len(item) + 1:].strip())
+
+        logging.debug(f'{file_path}: {item} {values}')
+        return values
+
+
 def extract_quantity_from_dir_name(dir_name: str) -> int:
-    if ('run4' in dir_name) or ('run8' in dir_name) or ('run12' in dir_name):
+    dir_name = dir_name.split('/')[-1]
+    if ('run1' == dir_name) or ('run2' == dir_name) or ('run3' == dir_name) or ('run4' == dir_name) or ('run8' == dir_name) or ('run12' == dir_name):
         index = dir_name.rfind('run') + len('run')
         quantity = int(dir_name[index:])
         return quantity
-    
+
     return -1
 
 
-def generate_single_wasm_result() -> None:
-    for dir_name, sub_dirs, file_names in os.walk('./crun'):
+# time1 - time2
+def unixtime_sub(time1: str, time2: str) -> float:
+    unix_time1 = int(float(time1) * (10 ** 6))
+    unix_time2 = int(float(time2) * (10 ** 6))
+    result = (unix_time1 - unix_time2) / (10 ** 3) # msec
+    return result
+
+
+def calc_elapsed_time(file_path: str) -> float:
+    start_times = extract_values_from_file(file_path, ITEM['start_time'])
+    end_times = extract_values_from_file(file_path, ITEM['end_time'])
+
+    min_start_time = min(start_times)
+    max_end_time = max(end_times)
+
+    return unixtime_sub(max_end_time, min_start_time) / (10 ** 3) # msec to sec
+
+
+def calc_startup_time(file_path: str) -> float:
+    init_times = extract_values_from_file(file_path, ITEM['init_time'])
+    start_times = extract_values_from_file(file_path, ITEM['start_time'])
+
+    min_init_time = min(init_times)
+    max_start_time = max(start_times)
+
+    return unixtime_sub(max_start_time, min_init_time)
+
+
+def generate_wasm_result(mode: str) -> None:
+    for dir_name, sub_dirs, file_names in os.walk(f'./{mode}'):
         sub_dirs.sort(key=lambda sub_dir: len(sub_dir))
         file_names.sort()
 
@@ -65,69 +110,59 @@ def generate_single_wasm_result() -> None:
         if extract_quantity_from_dir_name(dir_name) == -1:
             continue
 
-        # Extract max memory size from each .time files.
         quantity = extract_quantity_from_dir_name(dir_name)
-        max_memories = [[] for i in range(quantity)]
-        i = 0
+        max_memories = []
+        elapsed_times = []
+        startup_times = []
         for file_name in file_names:
+            _, ext = os.path.splitext(file_name)
             file_path = get_time_file_path(dir_name, file_name)
-            memory = extract_value_from_file(file_path, ITEM['max_memory'])
-            index = i // N_BENCHMARK 
-            max_memories[index].append(int(memory))
-            i += 1
+            if ext != '.time':
+                tmp_elapsed_time = calc_elapsed_time(file_path)
+                tmp_startup_time = calc_startup_time(file_path)
+                elapsed_times.append(tmp_elapsed_time)
+                startup_times.append(tmp_startup_time)
+            else:
+                tmp_memory = extract_value_from_file(file_path, ITEM['max_memory'])
+                max_memories.append(int(tmp_memory))
 
         logging.debug(max_memories)
         logging.debug(f'max_memories length is {len(max_memories)}')
+        logging.debug(elapsed_times)
+        logging.debug(f'elapsed_times length is {len(elapsed_times)}')
+        logging.debug(startup_times)
+        logging.debug(f'startup_times length is {len(startup_times)}')
 
-        # Calculate average max memory size.
-        each_avg = []
-        avg = 0
-        for max_memory in max_memories:
-            each_avg.append(statistics.mean(max_memory))
-        for value in each_avg:
-            avg += value
-
-        # Add avg into dictionary.
+        # Add average max memory into dictionary.
         for key in max_memory_avg:
-            if key in dir_name:
-                max_memory_avg[key] = avg
+            if key == dir_name.split('/')[-2] + '/' + dir_name.split('/')[-1]:
+                if mode == 'crun':
+                    max_memory_avg[key] = statistics.mean(max_memories) * quantity
+                elif mode == 'crun_with_multiple_wasm':
+                    max_memory_avg[key] = statistics.mean(max_memories)
+
+        # Add average elapsed time into dictionary.
+        for key in elapsed_time_avg:
+            if key == dir_name.split('/')[-2] + '/' + dir_name.split('/')[-1]:
+                elapsed_time_avg[key] = statistics.mean(elapsed_times)
+
+        # Add average startup time into dictionary.
+        for key in startup_time_avg:
+            if key == dir_name.split('/')[-2] + '/' + dir_name.split('/')[-1]:
+                startup_time_avg[key] = statistics.mean(startup_times)
 
     logging.debug(f'max_memory_avg: {max_memory_avg}')
+    logging.debug(f'elapsed_time_avg: {elapsed_time_avg}')
+    logging.debug(f'startup_time_avg: {startup_time_avg}')
 
-    results['single_wasm']['max_memory_avg'] = max_memory_avg.copy()
-    results['single_wasm']['elapsed_time_avg'] = elapsed_time_avg.copy()
-
-
-def generate_multiple_wasm_result() -> None:
-    for dir_name, sub_dirs, file_names in os.walk('./crun_with_multiple_wasm'):
-        sub_dirs.sort(key=lambda sub_dir: len(sub_dir))
-        file_names.sort()
-
-        logging.debug(f'Current dir is {dir_name}')
-
-        if extract_quantity_from_dir_name(dir_name) == -1:
-            continue
-
-        # Extract max memory size from each .time files.
-        max_memory = []
-        for file_name in file_names:
-            file_path = get_time_file_path(dir_name, file_name)
-            memory = extract_value_from_file(file_path, ITEM['max_memory'])
-            max_memory.append(int(memory))
-
-        logging.debug(max_memory)
-        logging.debug(f'max_memory length is {len(max_memory)}')
-
-        # Calculate average max memory size and add it into dictionary.
-        for key in max_memory_avg:
-            if key in dir_name:
-                avg = statistics.mean(max_memory)
-                max_memory_avg[key] = avg
-
-    logging.debug(f'max_memory_avg: {max_memory_avg}')
-
-    results['multiple_wasm']['max_memory_avg'] = max_memory_avg.copy()
-    results['multiple_wasm']['elapsed_time_avg'] = elapsed_time_avg.copy()
+    if mode == 'crun':
+        results['single_wasm']['max_memory_avg'] = max_memory_avg.copy()
+        results['single_wasm']['elapsed_time_avg'] = elapsed_time_avg.copy()
+        results['single_wasm']['startup_time_avg'] = startup_time_avg.copy()
+    elif mode == 'crun_with_multiple_wasm':
+        results['multiple_wasm']['max_memory_avg'] = max_memory_avg.copy()
+        results['multiple_wasm']['elapsed_time_avg'] = elapsed_time_avg.copy()
+        results['multiple_wasm']['startup_time_avg'] = startup_time_avg.copy()
 
 
 def generate_csv(name: str, item: str) -> None:
@@ -150,10 +185,12 @@ def generate_csv(name: str, item: str) -> None:
 
 
 if __name__ == '__main__':
-    generate_single_wasm_result()
-    generate_multiple_wasm_result()
+    generate_wasm_result('crun')
+    generate_wasm_result('crun_with_multiple_wasm')
 
     pprint.pprint(results)
 
     # Generate csv files.
     generate_csv('max_memory_avg.csv', 'max_memory_avg')
+    generate_csv('elapsed_time_avg.csv', 'elapsed_time_avg')
+    generate_csv('startup_time_avg.csv', 'startup_time_avg')
