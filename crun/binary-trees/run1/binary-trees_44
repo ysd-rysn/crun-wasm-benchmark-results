@@ -9,7 +9,9 @@ stretch tree of depth 22	 check: 8388607
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674063188.679144
-end time: 1674063201.079336
-elapsed time: 12.400192
-init time: 1674063188.650688
+app start time: 1674152794.526359
+app end time: 1674152806.826406
+app execution time: 12.300047
+crun start time: 1674152794.499123
+container init time: 1674152794.500030
+crun start time: 1674152794.499123

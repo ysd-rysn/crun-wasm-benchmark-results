@@ -1,12 +1,16 @@
 3968050
 Pfannkuchen(12) = 65
-start time: 1674040387.664145
-end time: 1674040423.276506
-elapsed time: 35.612361
-init time: 1674040387.633186
+app start time: 1674129663.221323
+app end time: 1674129701.325263
+app execution time: 38.103940
+crun start time: 1674129663.198945
+container init time: 1674129663.199921
+crun start time: 1674129663.198945
 3968050
 Pfannkuchen(12) = 65
-start time: 1674040387.764912
-end time: 1674040423.365752
-elapsed time: 35.600840
-init time: 1674040387.734705
+app start time: 1674129663.332542
+app end time: 1674129701.356279
+app execution time: 38.023737
+crun start time: 1674129663.303717
+container init time: 1674129663.304538
+crun start time: 1674129663.303717

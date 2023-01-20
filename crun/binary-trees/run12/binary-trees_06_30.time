@@ -1,18 +1,18 @@
 	Command being timed: "/home/vagrant/wasm32-wasi-benchmark/bin/crun run --console-socket=/home/vagrant/wasm32-wasi-benchmark/binary-trees_06_30.sock binary-trees_wasm_06_30"
-	User time (seconds): 14.53
-	System time (seconds): 0.05
+	User time (seconds): 14.44
+	System time (seconds): 0.03
 	Percent of CPU this job got: 33%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:43.43
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:43.04
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 148168
+	Maximum resident set size (kbytes): 148456
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 34105
-	Voluntary context switches: 12
-	Involuntary context switches: 1976
+	Minor (reclaiming a frame) page faults: 34111
+	Voluntary context switches: 13
+	Involuntary context switches: 1865
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 0
