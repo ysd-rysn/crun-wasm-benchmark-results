@@ -216,5 +216,5 @@ if __name__ == '__main__':
 
     # Generate csv files.
     generate_csv('max_memory_avg.csv', 'max_memory_avg')
-    generate_csv('elapsed_time_avg.csv', 'elapsed_time_avg')
+    generate_csv('execution_time_avg.csv', 'elapsed_time_avg')
     generate_csv('startup_time_avg.csv', 'startup_time_avg')
