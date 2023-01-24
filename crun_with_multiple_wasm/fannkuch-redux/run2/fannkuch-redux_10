@@ -1,7 +1,13 @@
-start time: 1673924900.534286
-end time: 1673924936.005841
-elapsed time: 35.471555
-start time: 1673924900.534014
-end time: 1673924936.009576
-elapsed time: 35.475562
-init time: 1673924900.509340
+3968050
+Pfannkuchen(12) = 65
+app start time: 1674484095.941755
+app end time: 1674484131.935150
+app execution time: 35.993395
+3968050
+Pfannkuchen(12) = 65
+app start time: 1674484095.941234
+app end time: 1674484131.952958
+app execution time: 36.011724
+crun start time: 1674484095.908128
+container init time: 1674484095.908873
+crun start time: 1674484095.908128
