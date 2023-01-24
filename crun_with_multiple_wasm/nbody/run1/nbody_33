@@ -1,4 +1,8 @@
-start time: 1673928602.957308
-end time: 1673928607.607019
-elapsed time: 4.649711
-init time: 1673928602.936464
+-0.169075164
+-0.169059907
+app start time: 1674496232.387752
+app end time: 1674496236.776069
+app execution time: 4.388317
+crun start time: 1674496232.364309
+container init time: 1674496232.365203
+crun start time: 1674496232.364309

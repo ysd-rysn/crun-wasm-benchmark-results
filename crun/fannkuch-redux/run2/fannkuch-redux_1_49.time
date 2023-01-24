@@ -1,18 +1,18 @@
 	Command being timed: "/home/vagrant/wasm32-wasi-benchmark/bin/crun run --console-socket=/home/vagrant/wasm32-wasi-benchmark/fannkuch-redux_1_49.sock fannkuch-redux_wasm_1_49"
-	User time (seconds): 34.99
-	System time (seconds): 0.00
+	User time (seconds): 34.82
+	System time (seconds): 0.04
 	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:35.03
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:34.90
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 19204
+	Maximum resident set size (kbytes): 19760
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 1331
+	Minor (reclaiming a frame) page faults: 1338
 	Voluntary context switches: 11
-	Involuntary context switches: 295
+	Involuntary context switches: 418
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 0

@@ -12,10 +12,12 @@ stretch tree of depth 22	 check: 8388607
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674042404.826778
-end time: 1674042418.916100
-elapsed time: 14.089322
-init time: 1674042404.799718
+app start time: 1674131765.481877
+app end time: 1674131781.519253
+app execution time: 16.037376
+crun start time: 1674131765.454638
+container init time: 1674131765.455650
+crun start time: 1674131765.454638
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -26,10 +28,12 @@ init time: 1674042404.799718
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674042404.940741
-end time: 1674042419.108793
-elapsed time: 14.168052
-init time: 1674042404.897094
+app start time: 1674131765.583535
+app end time: 1674131781.730265
+app execution time: 16.146730
+crun start time: 1674131765.560877
+container init time: 1674131765.562176
+crun start time: 1674131765.560877
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -40,10 +44,12 @@ init time: 1674042404.897094
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674042405.032865
-end time: 1674042419.190525
-elapsed time: 14.157660
-init time: 1674042404.999640
+app start time: 1674131765.688627
+app end time: 1674131781.763535
+app execution time: 16.074908
+crun start time: 1674131765.662542
+container init time: 1674131765.663439
+crun start time: 1674131765.662542
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -54,7 +60,9 @@ init time: 1674042404.999640
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674042405.124764
-end time: 1674042419.482666
-elapsed time: 14.357902
-init time: 1674042405.100474
+app start time: 1674131765.787895
+app end time: 1674131782.098120
+app execution time: 16.310225
+crun start time: 1674131765.763780
+container init time: 1674131765.764752
+crun start time: 1674131765.763780

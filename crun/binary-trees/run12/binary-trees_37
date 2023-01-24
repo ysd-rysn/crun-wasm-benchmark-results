@@ -20,10 +20,12 @@ stretch tree of depth 22	 check: 8388607
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059622.399743
-end time: 1674059665.265505
-elapsed time: 42.865762
-init time: 1674059622.368233
+app start time: 1674149228.771822
+app end time: 1674149271.201634
+app execution time: 42.429812
+crun start time: 1674149228.744335
+container init time: 1674149228.745183
+crun start time: 1674149228.744335
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -34,10 +36,9 @@ init time: 1674059622.368233
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059622.516552
-end time: 1674059665.655835
-elapsed time: 43.139283
-init time: 1674059622.482249
+app start time: 1674149228.665029
+app end time: 1674149271.635596
+app execution time: 42.970567
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -48,10 +49,15 @@ init time: 1674059622.482249
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059622.287163
-end time: 1674059665.786868
-elapsed time: 43.499705
-init time: 1674059622.260604
+app start time: 1674149228.863503
+app end time: 1674149271.644695
+app execution time: 42.781192
+crun start time: 1674149228.637670
+container init time: 1674149228.638619
+crun start time: 1674149228.843784
+container init time: 1674149228.844765
+crun start time: 1674149228.637670
+crun start time: 1674149228.843784
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -62,10 +68,12 @@ init time: 1674059622.260604
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059622.739693
-end time: 1674059666.236379
-elapsed time: 43.496686
-init time: 1674059622.694958
+app start time: 1674149229.002827
+app end time: 1674149272.161649
+app execution time: 43.158822
+crun start time: 1674149228.944219
+container init time: 1674149228.962502
+crun start time: 1674149228.944219
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -76,10 +84,12 @@ init time: 1674059622.694958
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059622.620985
-end time: 1674059666.265841
-elapsed time: 43.644856
-init time: 1674059622.587941
+app start time: 1674149229.110815
+app end time: 1674149272.404382
+app execution time: 43.293567
+crun start time: 1674149229.049031
+container init time: 1674149229.062004
+crun start time: 1674149229.049031
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -90,10 +100,12 @@ init time: 1674059622.587941
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059623.036914
-end time: 1674059666.388698
-elapsed time: 43.351784
-init time: 1674059623.009861
+app start time: 1674149229.210978
+app end time: 1674149272.513507
+app execution time: 43.302529
+crun start time: 1674149229.148923
+container init time: 1674149229.167901
+crun start time: 1674149229.148923
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -104,10 +116,12 @@ init time: 1674059623.009861
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059622.929088
-end time: 1674059666.414213
-elapsed time: 43.485125
-init time: 1674059622.888925
+app start time: 1674149229.607782
+app end time: 1674149272.798375
+app execution time: 43.190593
+crun start time: 1674149229.578628
+container init time: 1674149229.579546
+crun start time: 1674149229.578628
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -118,10 +132,12 @@ init time: 1674059622.888925
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059622.831487
-end time: 1674059666.530860
-elapsed time: 43.699373
-init time: 1674059622.794036
+app start time: 1674149229.322775
+app end time: 1674149272.824903
+app execution time: 43.502128
+crun start time: 1674149229.253188
+container init time: 1674149229.277728
+crun start time: 1674149229.253188
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -132,10 +148,12 @@ init time: 1674059622.794036
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059623.136998
-end time: 1674059666.740434
-elapsed time: 43.603436
-init time: 1674059623.107015
+app start time: 1674149229.387631
+app end time: 1674149272.852799
+app execution time: 43.465168
+crun start time: 1674149229.357246
+container init time: 1674149229.359173
+crun start time: 1674149229.357246
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -146,10 +164,12 @@ init time: 1674059623.107015
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059623.252606
-end time: 1674059666.858813
-elapsed time: 43.606207
-init time: 1674059623.216323
+app start time: 1674149229.807758
+app end time: 1674149272.975737
+app execution time: 43.167979
+crun start time: 1674149229.778452
+container init time: 1674149229.781976
+crun start time: 1674149229.778452
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -160,10 +180,12 @@ init time: 1674059623.216323
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059623.345366
-end time: 1674059666.903944
-elapsed time: 43.558578
-init time: 1674059623.325684
+app start time: 1674149229.748744
+app end time: 1674149273.091215
+app execution time: 43.342471
+crun start time: 1674149229.682965
+container init time: 1674149229.694125
+crun start time: 1674149229.682965
 2097152	 trees of depth 4	 check: 65011712
 524288	 trees of depth 6	 check: 66584576
 131072	 trees of depth 8	 check: 66977792
@@ -174,7 +196,9 @@ init time: 1674059623.325684
 128	 trees of depth 18	 check: 67108736
 32	 trees of depth 20	 check: 67108832
 long lived tree of depth 21 	 check: 4194303 
-start time: 1674059623.428733
-end time: 1674059667.104832
-elapsed time: 43.676099
-init time: 1674059623.409002
+app start time: 1674149229.509297
+app end time: 1674149273.131803
+app execution time: 43.622506
+crun start time: 1674149229.458647
+container init time: 1674149229.475182
+crun start time: 1674149229.458647

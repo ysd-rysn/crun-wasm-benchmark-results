@@ -1,21 +1,21 @@
 	Command being timed: "/home/vagrant/wasm32-wasi-benchmark/bin/crun-with-multiple-wasm run fannkuch-redux-wasm"
-	User time (seconds): 674.46
-	System time (seconds): 1.07
-	Percent of CPU this job got: 399%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:49.21
+	User time (seconds): 494.50
+	System time (seconds): 0.28
+	Percent of CPU this job got: 397%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:04.43
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 25132
+	Maximum resident set size (kbytes): 24916
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 3231
-	Voluntary context switches: 143
-	Involuntary context switches: 83121
+	Minor (reclaiming a frame) page faults: 3237
+	Voluntary context switches: 147
+	Involuntary context switches: 62487
 	Swaps: 0
 	File system inputs: 0
-	File system outputs: 0
+	File system outputs: 16
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0

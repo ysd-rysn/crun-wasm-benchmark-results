@@ -1,25 +1,43 @@
-start time: 1672568649.915729
-end time: 1672568732.104911
-elapsed time: 82.189182
-start time: 1672568649.898202
-end time: 1672568732.109196
-elapsed time: 82.210994
-start time: 1672568649.915877
-end time: 1672568732.156653
-elapsed time: 82.240776
-start time: 1672568649.901024
-end time: 1672568732.361435
-elapsed time: 82.460411
-start time: 1672568649.899650
-end time: 1672568732.438470
-elapsed time: 82.538820
-start time: 1672568649.915770
-end time: 1672568732.450520
-elapsed time: 82.534750
-start time: 1672568649.898831
-end time: 1672568732.481640
-elapsed time: 82.582809
-start time: 1672568649.915438
-end time: 1672568732.558138
-elapsed time: 82.642700
-init time: 1672568649.862505
+3968050
+Pfannkuchen(12) = 65
+app start time: 1674483681.399761
+app end time: 1674483762.114841
+app execution time: 80.715080
+3968050
+Pfannkuchen(12) = 65
+app start time: 1674483681.376301
+app end time: 1674483762.586631
+app execution time: 81.210330
+3968050
+Pfannkuchen(12) = 65
+app start time: 1674483681.399793
+app end time: 1674483762.606347
+app execution time: 81.206554
+3968050
+Pfannkuchen(12) = 65
+app start time: 1674483681.378010
+app end time: 1674483762.612765
+app execution time: 81.234755
+3968050
+Pfannkuchen(12) = 65
+app start time: 1674483681.399647
+app end time: 1674483762.617095
+app execution time: 81.217448
+3968050
+Pfannkuchen(12) = 65
+app start time: 1674483681.391183
+app end time: 1674483762.651572
+app execution time: 81.260389
+3968050
+Pfannkuchen(12) = 65
+app start time: 1674483681.375692
+app end time: 1674483762.711373
+app execution time: 81.335681
+3968050
+Pfannkuchen(12) = 65
+app start time: 1674483681.375025
+app end time: 1674483763.444773
+app execution time: 82.069748
+crun start time: 1674483681.341719
+container init time: 1674483681.342495
+crun start time: 1674483681.341719

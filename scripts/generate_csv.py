@@ -14,10 +14,11 @@ NAME = ['nbody', 'fannkuch-redux', 'binary-trees']
 QUANTITY = ['run1', 'run2', 'run3', 'run4', 'run8', 'run12']
 N_BENCHMARK = 50
 ITEM = {
-    'elapsed_time': 'elapsed time:',
-    'start_time': 'start time:',
-    'end_time': 'end time:',
-    'init_time': 'init time:',
+    'elapsed_time': 'app execution time:',
+    'start_time': 'app start time:',
+    'end_time': 'app end time:',
+    'init_time': 'container init time:',
+    'command_start_time': 'crun start time:',
     'max_memory': 'Maximum resident set size (kbytes):'
 }
 
@@ -26,14 +27,15 @@ results = {
     'multiple_wasm': {}
 }
 max_memory_avg = {name + '/' + quantity: 0 for name in NAME for quantity in QUANTITY}
-elapsed_time_avg = {name + '/' + quantity: '0.0' for name in NAME for quantity in QUANTITY}
-startup_time_avg = {name + '/' + quantity: '0.0' for name in NAME for quantity in QUANTITY}
+elapsed_time_avg = {name + '/' + quantity: 0 for name in NAME for quantity in QUANTITY}
+startup_time_avg = {name + '/' + quantity: 0 for name in NAME for quantity in QUANTITY}
 
 logging.debug(max_memory_avg)
 logging.debug(elapsed_time_avg)
+logging.debug(startup_time_avg)
 
 
-def get_time_file_path(dir_name: str, file_name: str) -> str:
+def get_file_path(dir_name: str, file_name: str) -> str:
     tmp_dir_name = dir_name.split('/')[-2] + '/' + dir_name.split('/')[-1]
     for name in NAME:
         for quantity in QUANTITY:
@@ -90,14 +92,36 @@ def calc_elapsed_time(file_path: str) -> float:
     return unixtime_sub(max_end_time, min_start_time) / (10 ** 3) # msec to sec
 
 
-def calc_startup_time(file_path: str) -> float:
+def calc_cmd_overhead_time(file_path: str, quantity: int) -> float:
+    cmd_start_times = extract_values_from_file(file_path, ITEM['command_start_time'])
+    init_times = extract_values_from_file(file_path, ITEM['init_time'])
+
+    min_cmd_start_time = min(cmd_start_times)
+    min_init_time = min(init_times)
+
+    # Calculate command overhead time.
+    cmd_overhead_time = unixtime_sub(min_init_time, min_cmd_start_time) * quantity
+    logging.debug(f'{file_path}: cmd_overhead = {cmd_overhead_time} ms')
+
+    return cmd_overhead_time
+
+
+def calc_startup_time(file_path: str, mode: str, quantity: int) -> float:
     init_times = extract_values_from_file(file_path, ITEM['init_time'])
     start_times = extract_values_from_file(file_path, ITEM['start_time'])
 
     min_init_time = min(init_times)
     max_start_time = max(start_times)
 
-    return unixtime_sub(max_start_time, min_init_time)
+    startup_time = unixtime_sub(max_start_time, min_init_time)
+
+    if mode == 'crun':
+        cmd_overhead_time = calc_cmd_overhead_time(file_path, quantity)
+
+        # Calculate startup time without command overhead.
+        startup_time = startup_time - cmd_overhead_time
+
+    return startup_time
 
 
 def generate_wasm_result(mode: str) -> None:
@@ -116,10 +140,10 @@ def generate_wasm_result(mode: str) -> None:
         startup_times = []
         for file_name in file_names:
             _, ext = os.path.splitext(file_name)
-            file_path = get_time_file_path(dir_name, file_name)
+            file_path = get_file_path(dir_name, file_name)
             if ext != '.time':
                 tmp_elapsed_time = calc_elapsed_time(file_path)
-                tmp_startup_time = calc_startup_time(file_path)
+                tmp_startup_time = calc_startup_time(file_path, mode, quantity)
                 elapsed_times.append(tmp_elapsed_time)
                 startup_times.append(tmp_startup_time)
             else:
@@ -192,5 +216,5 @@ if __name__ == '__main__':
 
     # Generate csv files.
     generate_csv('max_memory_avg.csv', 'max_memory_avg')
-    generate_csv('elapsed_time_avg.csv', 'elapsed_time_avg')
+    generate_csv('execution_time_avg.csv', 'elapsed_time_avg')
     generate_csv('startup_time_avg.csv', 'startup_time_avg')

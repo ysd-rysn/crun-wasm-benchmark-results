@@ -1,72 +1,96 @@
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063067.472823
-end time: 1674063186.874061
-elapsed time: 119.401238
-init time: 1674063067.445563
+app start time: 1674152672.090712
+app end time: 1674152792.341593
+app execution time: 120.250881
+crun start time: 1674152672.059192
+container init time: 1674152672.060237
+crun start time: 1674152672.059192
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063067.366590
-end time: 1674063187.000809
-elapsed time: 119.634219
-init time: 1674063067.341493
+app start time: 1674152672.184629
+app end time: 1674152792.979751
+app execution time: 120.795122
+crun start time: 1674152672.158328
+container init time: 1674152672.161111
+crun start time: 1674152672.158328
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063067.673065
-end time: 1674063187.445708
-elapsed time: 119.772643
-init time: 1674063067.649377
+app start time: 1674152672.283813
+app end time: 1674152793.083010
+app execution time: 120.799197
+crun start time: 1674152672.257299
+container init time: 1674152672.258343
+crun start time: 1674152672.257299
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063067.568918
-end time: 1674063187.649666
-elapsed time: 120.080748
-init time: 1674063067.543489
+app start time: 1674152672.407824
+app end time: 1674152793.507561
+app execution time: 121.099737
+crun start time: 1674152672.382582
+container init time: 1674152672.383393
+crun start time: 1674152672.382582
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063067.815610
-end time: 1674063187.996348
-elapsed time: 120.180738
-init time: 1674063067.775784
+app start time: 1674152672.718588
+app end time: 1674152793.757796
+app execution time: 121.039208
+crun start time: 1674152672.686905
+container init time: 1674152672.687705
+crun start time: 1674152672.686905
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063067.923424
-end time: 1674063188.080277
-elapsed time: 120.156853
-init time: 1674063067.870657
+app start time: 1674152672.634723
+app end time: 1674152793.950646
+app execution time: 121.315923
+crun start time: 1674152672.576969
+container init time: 1674152672.581803
+crun start time: 1674152672.576969
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063068.013163
-end time: 1674063188.276510
-elapsed time: 120.263347
-init time: 1674063067.990705
+app start time: 1674152672.511626
+app end time: 1674152793.964996
+app execution time: 121.453370
+crun start time: 1674152672.472524
+container init time: 1674152672.485939
+crun start time: 1674152672.472524
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063068.244512
-end time: 1674063188.299890
-elapsed time: 120.055378
-init time: 1674063068.218837
+app start time: 1674152672.919293
+app end time: 1674152794.012580
+app execution time: 121.093287
+crun start time: 1674152672.902652
+container init time: 1674152672.903489
+crun start time: 1674152672.902652
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063068.105023
-end time: 1674063188.307254
-elapsed time: 120.202231
-init time: 1674063068.081292
+app start time: 1674152672.886794
+app end time: 1674152794.097911
+app execution time: 121.211117
+crun start time: 1674152672.822746
+container init time: 1674152672.833824
+crun start time: 1674152672.822746
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063068.332752
-end time: 1674063188.388690
-elapsed time: 120.055938
-init time: 1674063068.304411
+app start time: 1674152673.051589
+app end time: 1674152794.133704
+app execution time: 121.082115
+crun start time: 1674152673.004097
+container init time: 1674152673.025953
+crun start time: 1674152673.004097
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063068.552829
-end time: 1674063188.392557
-elapsed time: 119.839728
-init time: 1674063068.522333
+app start time: 1674152673.151743
+app end time: 1674152794.224078
+app execution time: 121.072335
+crun start time: 1674152673.100771
+container init time: 1674152673.121780
+crun start time: 1674152673.100771
 3968050
 Pfannkuchen(12) = 65
-start time: 1674063068.440718
-end time: 1674063188.465804
-elapsed time: 120.025086
-init time: 1674063068.414911
+app start time: 1674152673.251057
+app end time: 1674152794.319226
+app execution time: 121.068169
+crun start time: 1674152673.216141
+container init time: 1674152673.217178
+crun start time: 1674152673.216141
