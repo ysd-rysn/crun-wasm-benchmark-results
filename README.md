@@ -6,7 +6,7 @@ $ make generate_csv
 
 Following CSV files are generated.
 - max_memory_avg.csv
-- elapased_time.csv
+- execution_time.csv
 - startup_time.csv
 
 In CSV file:\
